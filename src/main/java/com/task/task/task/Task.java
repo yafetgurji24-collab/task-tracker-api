@@ -53,7 +53,7 @@ public class Task{
         return status;
     }
 
-    public void setDescription(String newDiscription)
+    public void setDescription(String newDescription)
     {
         this.description=newDescription;
     }

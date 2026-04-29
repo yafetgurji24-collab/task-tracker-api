@@ -34,5 +34,13 @@ public class TaskService{
         
         repo.deleteById(id);
     }
+ 
+    public Task updateTask(Long id,Task updatedTask)
+    {
+        Task task = repo.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
+        task.setStatus(updatedTask.getStatus());
+        task.setDescription(updatedTask.getDescription());
+        return repo.save(task);
+    }
     
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.PutMapping;
 @RestController
 @RequestMapping("/task")
 public class TaskController{
@@ -40,5 +40,11 @@ public class TaskController{
     public void deleteOne(@PathVariable Long id)
     {
         service.delete(id);
+    }
+
+    @PutMapping("/{id}")
+    public Task updateTheTask(@PathVariable Long id,@RequestBody Task updatedTask)
+    {
+        return service.updateTask(id,updatedTask);
     }
 }
