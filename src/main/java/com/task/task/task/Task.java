@@ -8,7 +8,7 @@ public class Task{
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -26,5 +26,40 @@ public class Task{
     protected void updatedOn()
     {
         updatedAt = LocalDateTime.now();
+    }
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public LocalDateTime getCreatedAtTime()
+    {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAtTime()
+    {
+        return updatedAt;
+    }
+
+    public Status getStatus()
+    {
+        return status;
+    }
+
+    public void setDescription(String newDiscription)
+    {
+        this.description=newDescription;
+    }
+
+    public void setStatus(Status newStatus)
+    {
+        this.status=newStatus;
     }
 }

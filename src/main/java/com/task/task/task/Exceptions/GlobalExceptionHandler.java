@@ -1,8 +1,9 @@
 package com.task.task.task;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.http.HttpStatus;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler{
@@ -10,6 +11,6 @@ public class GlobalExceptionHandler{
     @ExceptionHandler(TaskNotFoundException.class)
     public ResponseEntity<String> HandlerTaskNotFoundException(TaskNotFoundException ex)
     {
-        return new ResponseEntity<>(ex.getMessage(),HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }
